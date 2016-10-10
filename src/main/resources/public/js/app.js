@@ -5,9 +5,9 @@ app.config(function($routeProvider){
             templateUrl: '/views/users.html',
             controller: 'usersController'
         })
-        .when('/roles',{
-            templateUrl: '/views/roles.html',
-            controller: 'rolesController'
+        .when('/books',{
+            templateUrl: '/views/books.html',
+            controller: 'booksController'
         })
         .otherwise(
             { redirectTo: '/'}

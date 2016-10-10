@@ -8,11 +8,15 @@
         <thead>
         <tr>
             <th>Name</th>
+            <th>Author</th>
+            <th>Year</th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="usr in users">
-            <td>{{usr.name}}</td>
+        <tr ng-repeat="book in books">
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.year}}</td>
         </tr>
         </tbody>
     </table>
