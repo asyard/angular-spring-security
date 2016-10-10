@@ -22,17 +22,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/index.html", "/home.html", "/login.html", "/").permitAll()
                 .antMatchers("/js/**").permitAll()
+                .antMatchers("/users").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login.html")
+                .defaultSuccessUrl("/views/main.html")
                 .permitAll()
                 .and()
                 .logout()
                 .logoutUrl("/logout")
-                .logoutSuccessUrl("/resources/public/login.html")
+                .logoutSuccessUrl("/")
                 .permitAll();
         ;
+        http.csrf().disable();
 
         if ("true".equals(System.getProperty("httpsOnly"))) {
             System.out.println("launching the application in HTTPS-only mode");
